@@ -25,10 +25,10 @@ public class Section extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "course_id")
-    private Course course;
+    private Course courses;
 
     @OneToMany(
-            mappedBy = "section"
+            mappedBy = "sections"
     )
     private List<Lecture> lectures;
 

@@ -1,9 +1,7 @@
 package com.rpsh.jpa.models;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -18,7 +16,9 @@ import java.util.List;
 @AllArgsConstructor
 @SuperBuilder
 @Entity
+@NamedQuery(
 
+        name = "Author.updateByNamedQuery", query = "update Author a set a.age = :age")
 /*
 @Table(
         name = "AUTHOR_TBL"
@@ -35,7 +35,7 @@ public class Author extends BaseEntity {
 
     private int age;
 
-    @ManyToMany(mappedBy = "authors")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "authors")
     private List<Course> courses;
 
 }

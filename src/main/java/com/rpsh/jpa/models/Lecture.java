@@ -23,7 +23,7 @@ public class Lecture extends BaseEntity {
 
     @ManyToOne
     @JoinColumn(name = "section_id")
-    private Section section;
+    private Section sections;
 
     @OneToOne
     @JoinColumn(name = "resourse_id")

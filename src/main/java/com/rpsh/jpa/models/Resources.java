@@ -26,5 +26,5 @@ public class Resources {
 
     @OneToOne
     @JoinColumn(name = "lecture_id")
-    private Lecture lecture;
+    private Lecture lectures;
 }

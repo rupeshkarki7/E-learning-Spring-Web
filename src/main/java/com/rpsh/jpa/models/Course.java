@@ -27,12 +27,12 @@ public class Course extends BaseEntity {
                     @JoinColumn(name = "course_id")
             },
             inverseJoinColumns = {
-                    @JoinColumn(name = "author_id")
+                    @JoinColumn(name = "authors_id")
             }
     )
     private List<Author> authors;
     @OneToMany(
-            mappedBy = "course"
+            mappedBy = "courses"
     )
     private List<Section> sections;
 }
